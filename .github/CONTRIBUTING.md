@@ -24,7 +24,7 @@ We are open to contributions from the community to improve and enhance the proje
 
 ## Chain of Command
 
-The project maintainers are responsible for reviewing and merging pull requests, managing issues, and ensuring the project's overall health. If you have any questions or need help, you can reach out to the maintainers which are listed in the `[CODEOWNERS](CODEOWNERS)` file.
+The project maintainers are responsible for reviewing and merging pull requests, managing issues, and ensuring the project's overall health. If you have any questions or need help, you can reach out to the maintainers which are listed in the [CODEOWNERS](./CODEONWER) file.
 
 ## Git Workflow
 
