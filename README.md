@@ -53,7 +53,7 @@ we are using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.
 git commit -m "feat: added new feature"
 ```
 
-You can learn more about contributing in the [Contribution Guidelines](./CONTRIBUTING.md).
+You can learn more about contributing in the [Contribution Guidelines](./.github/CONTRIBUTING.md).
 
 ## License
 
