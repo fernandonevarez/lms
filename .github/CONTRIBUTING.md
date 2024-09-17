@@ -164,6 +164,10 @@ Alternatively, you can install both requirements with a package manager - [homeb
   pnpm dev
 ```
 
+### Environment Variables
+
+Create a `.env` file in the root directory with the same structure as `.env.example`. You can copy the contents of `.env.example` and replace the values with the appropriate configuration.
+
 ## Other Resources
 
 - Installing Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git

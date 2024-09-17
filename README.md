@@ -39,9 +39,14 @@ Ensure you have the following installed:
     pnpm install
    ```
 3. **Start the development server**:
+
    ```bash
    pnpm dev
    ```
+
+### Environment Variables
+
+Create a `.env` file in the root directory with the same structure as `.env.example`. You can copy the contents of `.env.example` and replace the values with the appropriate configuration.
 
 ## Contributing
 
