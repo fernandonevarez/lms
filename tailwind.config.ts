@@ -10,6 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        maroon: '#8c1d40',
+        black: '#000000',
+        white: '#ffffff',
+        gray: '#f9f9fa',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -55,6 +59,18 @@ const config: Config = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      fontFamily: {
+        '--font-sans':
+          '"geistSansFont",Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,arial',
+        '--font-sans-fallback':
+          'Inter",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
+        '--font-mono-fallback':
+          '"Roboto Mono",Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace',
+        '--font-space-grotesk': 'Space Grotesk,var(--font-sans)',
+      },
+      transitionDuration: {
+        400: '400ms',
       },
     },
   },
