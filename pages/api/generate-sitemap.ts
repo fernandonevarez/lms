@@ -1,9 +1,7 @@
-// /pages/api/generate-sitemap.ts
-
 import fs from 'fs';
 import path from 'path';
 import { NextApiRequest, NextApiResponse } from 'next';
-import sitemap from '@/app/sitemap'; // Assuming your sitemap function is in the scripts directory.
+import sitemap from '@/app/sitemap';
 
 export default async function handler(
   req: NextApiRequest,
