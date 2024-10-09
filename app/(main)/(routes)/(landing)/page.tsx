@@ -1,60 +1,48 @@
 import { SignOutButton } from '@clerk/nextjs';
-import Image from 'next/image';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Home | CodeDevils' Academy | CodeDevils @ Arizona State University",
+  description:
+    "Join CodeDevils' Academy, the largest software development student community at Arizona State University, to learn coding through courses, workshops, and projects.",
+  keywords: [
+    'CodeDevils Academy',
+    'Learn coding Arizona State University',
+    'ASU coding courses',
+    'CodeDevils',
+    'coding workshops',
+    'software development ASU',
+  ],
+  openGraph: {
+    title: "Home | CodeDevils' Academy | CodeDevils @ Arizona State University",
+    description:
+      "Explore a wide range of coding courses and workshops at CodeDevils' Academy, the leading software development community at Arizona State University.",
+    url: 'https://academy.codedevils.org',
+    images: [
+      {
+        url: 'https://academy.codedevils.org/og.png',
+        width: 1200,
+        height: 630,
+        alt: 'CodeDevils Academy OpenGraph Image',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Home | CodeDevils' Academy | CodeDevils @ Arizona State University",
+    description:
+      'Join the leading software development student community at Arizona State University and start your coding journey today.',
+  },
+};
 
 export default function Home() {
   return (
-    <div className='grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]'>
-      <main className='flex flex-col gap-8 row-start-2 items-center sm:items-start'>
-        This is a protected page
+    <div className='flex flex-col gap-y-2'>
+      <p className='text-center md:text-start'>landing page</p>
+      <div className='text-center md:text-start'>
         <SignOutButton />
-      </main>
-      <footer className='row-start-3 flex gap-6 flex-wrap items-center justify-center'>
-        <a
-          className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-          href='https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            aria-hidden
-            src='https://nextjs.org/icons/file.svg'
-            alt='File icon'
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-          href='https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            aria-hidden
-            src='https://nextjs.org/icons/window.svg'
-            alt='Window icon'
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className='flex items-center gap-2 hover:underline hover:underline-offset-4'
-          href='https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          <Image
-            aria-hidden
-            src='https://nextjs.org/icons/globe.svg'
-            alt='Globe icon'
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
