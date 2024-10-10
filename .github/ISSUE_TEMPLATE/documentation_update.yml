@@ -1,0 +1,37 @@
+name: '📝 Documentation Update'
+description: 'Template for suggesting documentation changes'
+title: '[DOCS]: <title>'
+labels: ['documentation', 'enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: 'Please provide the following details for the documentation update.'
+
+  - type: input
+    id: section
+    attributes:
+      label: 'Section to Update'
+      description: 'Which section of the documentation requires an update?'
+
+  - type: textarea
+    id: changes
+    attributes:
+      label: 'Suggested Changes'
+      description: 'Describe the changes you want to propose.'
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: 'Reason for Update'
+      description: 'Why is this update necessary?'
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 'Priority Level'
+      description: 'Select how urgently the update should be handled.'
+      options:
+        - Low
+        - Moderate
+        - High
+        - Critical
