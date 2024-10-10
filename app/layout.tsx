@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://academy.codedevils.org'),
+  metadataBase: new URL('https://academy.codedevils.io'),
   title: "CodeDevils' Academy | CodeDevils @ Arizona State University",
   description:
     "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     description:
       "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
     type: 'website',
-    url: 'https://academy.codedevils.org',
+    url: 'https://academy.codedevils.io',
     locale: 'en_US',
     siteName: "CodeDevils' Academy",
     images: [
       {
-        url: 'https://www.codedevils.org/og.png',
+        url: 'https://www.codedevils.io/og.png',
         width: 1362,
         height: 482,
         alt: "CodeDevils' openGraph image",

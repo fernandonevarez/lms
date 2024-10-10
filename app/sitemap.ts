@@ -6,7 +6,7 @@ async function getCoursesURL() {
     // Use environment variable for the API endpoint
     const apiUrl =
       process.env.COURSES_API_URL ||
-      'https://academy.codedevils.org/api/courses';
+      'https://academy.codedevils.io/api/courses';
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error('Failed to fetch courses');
     const courses = await response.json();
@@ -29,7 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const courseUrls = courses.map(
     (course: { courseId: string; title: string; lastModified: string }) => ({
-      url: `https://academy.codedevils.org/courses/${course.courseId}`,
+      url: `https://academy.codedevils.io/courses/${course.courseId}`,
       lastModified: course.lastModified || currentDate,
       priority: 0.5,
     })
@@ -37,7 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticUrls = [
     {
-      url: 'https://academy.codedevils.org/',
+      url: 'https://academy.codedevils.io/',
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 1,
@@ -51,7 +51,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       '/sign-in',
       '/sign-up',
     ].map((path) => ({
-      url: `https://academy.codedevils.org${path}`,
+      url: `https://academy.codedevils.io${path}`,
       lastModified: currentDate,
       priority: path.includes('/courses') ? 0.8 : 0.5,
     })),

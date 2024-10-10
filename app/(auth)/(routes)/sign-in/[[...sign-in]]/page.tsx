@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Sign In | CodeDevils' Academy",
     description:
       "Access your CodeDevils' Academy account to start learning or continue your coding courses.",
-    url: 'https://academy.codedevils.org/sign-in',
+    url: 'https://academy.codedevils.io/sign-in',
   },
   twitter: {
     card: 'summary',

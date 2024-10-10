@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Login | CodeDevils' Academy",
     description:
       'Log in or sign up to start learning with CodeDevils at Arizona State University.',
-    url: 'https://academy.codedevils.org/sign-in',
+    url: 'https://academy.codedevils.io/sign-in',
   },
 };
 

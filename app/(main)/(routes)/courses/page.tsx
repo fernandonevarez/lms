@@ -18,7 +18,7 @@ export const metadata: Metadata = {
       "Courses | CodeDevils' Academy | CodeDevils @ Arizona State University",
     description:
       "Browse our wide range of coding courses at CodeDevils' Academy, from beginner programming to advanced development topics.",
-    url: 'https://academy.codedevils.org/courses',
+    url: 'https://academy.codedevils.io/courses',
   },
   twitter: {
     card: 'summary_large_image',
