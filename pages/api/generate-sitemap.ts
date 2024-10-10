@@ -18,7 +18,7 @@ export default async function handler(
       )
       .join('\n');
 
-    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapContent}\n</urlset>`;
+    const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.io/schemas/sitemap/0.9">\n${sitemapContent}\n</urlset>`;
 
     const filePath = path.join(process.cwd(), 'app', 'sitemap.xml');
     await fs.promises.writeFile(filePath, sitemapXml);

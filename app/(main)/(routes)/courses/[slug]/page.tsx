@@ -25,11 +25,11 @@ export async function generateMetadata({
     openGraph: {
       title: `${courseTitle} | CodeDevils' Academy | CodeDevils @ Arizona State University`,
       description: courseDescription,
-      url: `https://academy.codedevils.org/courses/${params.courseId}`,
+      url: `https://academy.codedevils.io/courses/${params.courseId}`,
       siteName: "CodeDevils' Academy",
       images: [
         {
-          url: `https://academy.codedevils.org/courses/${params.courseId}/og-image.png`,
+          url: `https://academy.codedevils.io/courses/${params.courseId}/og-image.png`,
           width: 1200,
           height: 630,
           alt: `${courseTitle} Course Image`,
@@ -41,7 +41,7 @@ export async function generateMetadata({
       description: courseDescription,
       card: 'summary_large_image',
       images: [
-        `https://academy.codedevils.org/courses/${params.courseId}/twitter-image.png`,
+        `https://academy.codedevils.io/courses/${params.courseId}/twitter-image.png`,
       ],
     },
   };
