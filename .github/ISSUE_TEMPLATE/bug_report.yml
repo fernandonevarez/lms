@@ -37,7 +37,7 @@ body:
       description: |
         Provide any additional information such as logs, screenshots, likes, scenarios in which the bug occurs so that it facilitates resolving the issue.
 
-  - type: select
+  - type: dropdown
     id: priority
     attributes:
       label: 'Priority Level'

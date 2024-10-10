@@ -25,7 +25,7 @@ body:
       label: 'Reason for Update'
       description: 'Why is this update necessary?'
 
-  - type: select
+  - type: dropdown
     id: priority
     attributes:
       label: 'Priority Level'
