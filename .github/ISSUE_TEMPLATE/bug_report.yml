@@ -1,8 +1,7 @@
-name: 🐛Bug Report
+name: 🐛 Bug Report
 description: File a bug report here
 title: '[BUG]: '
 labels: ['bug']
-assignees: ['AnishDe12020']
 body:
   - type: markdown
     attributes:
@@ -30,9 +29,21 @@ body:
         4. See error
     validations:
       required: true
+
   - type: textarea
     id: additional-information
     attributes:
       label: Additional Information
       description: |
         Provide any additional information such as logs, screenshots, likes, scenarios in which the bug occurs so that it facilitates resolving the issue.
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 'Priority Level'
+      description: 'Select the how urgently the refactoring should be handled.'
+      options:
+        - Low
+        - Moderate
+        - High
+        - Critical
