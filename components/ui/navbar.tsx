@@ -16,7 +16,6 @@ import {
   IconSearch,
   IconFileDescription,
 } from '@tabler/icons-react';
-import { Button } from './button';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
