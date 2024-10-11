@@ -16,6 +16,7 @@ import {
   IconSearch,
   IconFileDescription,
 } from '@tabler/icons-react';
+import { Button } from './button';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -23,9 +24,9 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='flex flex-col shadow-md w-full *:px-6'>
+      <header className='flex flex-col shadow-md w-full'>
         <Banner />
-        <nav className='flex md:grid md:grid-cols-4 items-center  py-4 md:py-0 w-full h-full max-w-screen-2xl mx-auto bg-white flex-col md:flex-row'>
+        <nav className='flex md:grid md:grid-cols-4 px-6 items-center py-4 w-full h-full max-w-screen-2xl mx-auto bg-white flex-col md:flex-row'>
           <section className='flex w-full flex-row items-center justify-between'>
             <div className='flex flex-row items-center justify-start gap-0 md:gap-1'>
               <IconLogo />
@@ -77,7 +78,7 @@ const Navbar = () => {
           <ul
             className={`${
               showMenu ? 'flex' : 'hidden'
-            } md:flex md:space-x-6 flex-col md:flex-row w-full justify-start md:justify-start text-md font-medium md:col-span-2 py-4 gap-y-4`}
+            } md:flex md:space-x-6 flex-col md:flex-row w-full justify-start md:justify-start text-md font-medium md:col-span-2 gap-y-4`}
           >
             <li className=''>
               <Link href='/onboarding' onClick={() => setShowMenu(!showMenu)}>
