@@ -51,7 +51,7 @@ const Banner = () => {
               </li>
               <li>
                 <Link
-                  href='https://www.codedevils.org/support'
+                  href='https://www.codedevils.io/support'
                   className='hover:underline'
                 >
                   Get Support
