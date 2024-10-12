@@ -7,19 +7,6 @@ body:
     attributes:
       value: "Please provide the following details for the documentation update."
 
-  - type: dropdown
-    id: priority
-    attributes:
-      label: "Priority Level"
-      description: "Select how urgently the update should be handled."
-      options:
-        - Low
-        - Moderate
-        - High
-        - Critical
-    validations:
-      required: true
-
   - type: input
     id: section
     attributes:
