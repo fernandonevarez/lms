@@ -1,7 +1,7 @@
 name: ✨ Feature Request
 description: Request a new feature or enhancement
-labels: ['feature']
-title: '[FEAT]: '
+labels: ["feature"]
+title: "[FEAT]: "
 body:
   - type: markdown
     attributes:
@@ -12,7 +12,7 @@ body:
     id: description
     attributes:
       label: Description
-      description: Give us a brief description of the feature or enhancement you would like
+      description: Give a brief description of the feature you would like
     validations:
       required: true
 

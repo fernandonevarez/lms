@@ -7,11 +7,11 @@ body:
     attributes:
       value: "Please provide the following details for the documentation update."
 
-  - type: input
+  - type: textarea
     id: section
     attributes:
       label: "Section to Update"
-      description: "Which section of the documentation requires an update?"
+      description: "Which section of the documentation requires an update? Please include the file path."
     validations:
       required: true
 
@@ -27,6 +27,6 @@ body:
     id: reason
     attributes:
       label: "Reason for Update"
-      description: "Why is this update necessary?"
+      description: "Why is this documentation update necessary?"
     validations:
       required: true
