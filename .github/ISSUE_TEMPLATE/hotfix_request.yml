@@ -1,20 +1,24 @@
-name: '🚨 Hotfix Request'
-description: 'Template for requesting a hotfix'
-title: '[HOTFIX]: <title>'
-labels: ['bug', 'P1 - Critical']
+name: "🚨 Hotfix Request"
+description: "Request a changes that needs to be made quick"
+title: "[HOTFIX]: "
+labels: ["bug", "P1 - Critical"]
 body:
   - type: markdown
     attributes:
-      value: 'Please provide the following details for the hotfix request.'
+      value: "Please provide the following details for the hotfix request."
 
-  - type: input
+  - type: textarea
     id: description
     attributes:
-      label: 'Issue Description'
-      description: 'Describe the issue that needs an urgent fix.'
+      label: "Issue Description"
+      description: "Describe the issue that needs an urgent fix."
+    validations:
+      required: true
 
   - type: textarea
     id: impact
     attributes:
-      label: 'Impact on Users'
-      description: 'Describe how this issue impacts users.'
+      label: "Impact on Project"
+      description: "Describe how this issue impacts the project."
+    validations:
+      required: true

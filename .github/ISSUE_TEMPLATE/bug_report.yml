@@ -1,13 +1,26 @@
 name: 🐛 Bug Report
 description: File a bug report here
-title: '[BUG]: '
-labels: ['bug']
+title: "[BUG]: "
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report 🤗
         Make sure there aren't any open/closed issues for this topic 😃
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: "Priority Level"
+      description: "Select the how urgently the refactoring should be handled."
+      options:
+        - Low
+        - Moderate
+        - High
+        - Critical
+    validations:
+      required: true
 
   - type: textarea
     id: bug-description
@@ -36,14 +49,3 @@ body:
       label: Additional Information
       description: |
         Provide any additional information such as logs, screenshots, likes, scenarios in which the bug occurs so that it facilitates resolving the issue.
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: 'Priority Level'
-      description: 'Select the how urgently the refactoring should be handled.'
-      options:
-        - Low
-        - Moderate
-        - High
-        - Critical
