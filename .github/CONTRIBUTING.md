@@ -7,7 +7,7 @@ This document plans to outline the following for _all_ contributors of this proj
 1. [Introduction](#introduction)
 1. [Chain of Command](#chain-of-command)
 1. [Git Flow](#git-workflow)
-   - [Branching Model](#branching-model)
+   - [Branching Convention](#branching-convention)
    - [Code Review and Testing](#code-review-and-testing)
    - [Commit Message Format](#commit-message-format)
 1. [Code of Conduct](#code-of-conduct)
@@ -30,20 +30,30 @@ The project maintainers are responsible for reviewing and merging pull requests,
 
 Our project follows a structured Git flow to ensure that all code changes are reviewed, tested, and integrated smoothly into production. Below is a guide on how we manage our branches and development process:
 
-### Branching Model
+### Branching Convention
+
+In this section, you'll learn about the branching strategy we use in this project.
 
 1. **Main Branch (`main`)**  
-   The `main` branch is the production-ready branch. Only stable, fully tested features and fixes are merged into `main`. Any changes merged into this branch are considered live and production-ready.
+   The `main` branch is the production-ready long-running branch. Only stable, fully tested features and fixes are merged into `main`. Any changes merged into this branch are considered live and production-ready.
 
-2. **Development Branch (`dev`)**  
-   The `dev` branch serves as the staging branch. All features and bug fixes are merged into `dev` after review and testing. Once we are confident that `dev` is stable and free from issues, changes are promoted to the `main` branch.
+2. **Hotfix Branches**  
+   If a critical bug is found in production, a hotfix branch can be created from `main`. Hotfix branches are short-lived and are merged back into `main` as soon as the issue is resolved after being reviewed and tested.
 
-3. **Feature Branches**  
-   To work on a new feature or bug fix:
+   - **Branch Naming Convention**: all hotfix branches should start with `hotfix/` followed by a brief description of the issue (e.g., `hotfix/fixed-login-issue`).
 
-   - **Step 1**: Open an issue in the repository describing the feature or bug.
-   - **Step 2**: Create a new branch from `dev`, named after the issue (e.g., `feature-issue-123` or `bugfix-issue-456`).
-   - **Step 3**: Develop the feature or fix in this branch.
+3. **Development Branch (`dev`)**  
+   The `dev` branch serves as a long-running staging branch. All changes and fixes, unless a hotfix change are merged into `dev` after being reviewed and tested. Once we are confident that `dev` is stable and free from issues, changes are pushed to the `main` branch to go live.
+
+4. **Feature Branches**
+   Feature branches are created for new features, refactors, non citical bug fixes, or any other changes that don't already have a dedicated branch for. Feature branches are created from `dev` and merged back into `dev` after development is complete.
+
+   - **Branch Naming Convention**: Depending on the nature of the change, naming for feature branches can vary.
+
+     - For new features: `feature/feature-name`
+     - For bug fixes: `bugfix/breif-description`
+     - For refactors: `refactor/brief-description`
+     - For Documentation changes: `docs/brief-description`
 
 ### Code Review and Testing
 

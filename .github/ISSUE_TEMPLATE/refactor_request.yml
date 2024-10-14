@@ -1,6 +1,6 @@
 name: '🧬 Refactor Request'
-description: 'Template for suggesting code refactoring'
-title: '[REFACTOR]: <title>'
+description: 'Suggest some code that should be refactored'
+title: '[REFACTOR]: '
 labels: ['enhancement']
 body:
   - type: markdown
@@ -12,26 +12,22 @@ body:
     attributes:
       label: 'Current Code'
       description: 'Briefly describe or link to the code you think needs refactoring.'
+    validations:
+      required: true
 
   - type: textarea
     id: proposed_refactoring
     attributes:
       label: 'Proposed Refactoring'
       description: 'Describe how you would refactor the code.'
+    validations:
+      required: true
 
   - type: textarea
     id: benefits
     attributes:
       label: 'Benefits'
       description: 'Explain why refactoring is beneficial.'
+    validations:
+      required: true
 
-  - type: dropdown
-    id: priority
-    attributes:
-      label: 'Priority Level'
-      description: 'Select how urgently the refactoring should be handled.'
-      options:
-        - Low
-        - Moderate
-        - High
-        - Critical
