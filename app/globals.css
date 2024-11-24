@@ -142,42 +142,6 @@ main {
 
 /* CUSTOM CSS */
 
-.underHoverEffect {
-  background-color: unset;
-  border: 0;
-  min-width: unset;
-  min-height: unset;
-  position: relative;
-  outline-offset: 6px;
-
-  font-weight: 600;
-  letter-spacing: -0.225px;
-  @apply text-maroon;
-}
-
-.underHoverEffect:before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: currentColor;
-  width: calc(100% - 4px);
-  height: 2px;
-  opacity: 0;
-  right: 3px;
-  bottom: -2px;
-  top: unset;
-  pointer-events: none;
-}
-
-.underHoverEffect:hover {
-  color: #8c1d40;
-  text-decoration: unset;
-}
-
-.underHoverEffect:hover:before {
-  opacity: 0.8;
-}
-
 .navbar_search {
   width: 237px;
 

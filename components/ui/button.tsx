@@ -14,7 +14,7 @@ const buttonVariants = cva(
         secondary:
           'bg-white text-black-foreground shadow-sm md:hover:text-black/95 md:hover:bg-white/95 transition-colors',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'underHoverEffect ',
+        link: 'relative bg-transparent border-0 min-w-0 min-h-0 outline-offset-[6px] font-semibold tracking-tight text-maroon hover:text-[#8c1d40] hover:no-underline before:block before:absolute before:bg-current before:w-[calc(100%-4px)] before:h-0.5 before:opacity-0 before:right-[3px] before:-bottom-0.5 before:pointer-events-none hover:before:opacity-80',
       },
       size: {
         default: 'h-9 px-4 py-2',
