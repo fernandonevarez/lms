@@ -15,7 +15,7 @@ export default function MainLayout({
   return (
     <>
       <Navbar />
-      <main className='mx-auto w-full max-w-screen-2xl'>{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );
