@@ -4,20 +4,17 @@ import Link from 'next/link';
 import {
   IconBrandInstagram,
   IconBrandGithub,
-  IconBrandDiscord,
   IconBrandLinkedin,
   IconPaperclip,
 } from '@tabler/icons-react';
 
+const socialLinks = {
+  linkedin: '',
+  instagram: '',
+  github: '',
+};
+
 const Footer = () => {
-  const socialLinks = {
-    discord: 'https://discord.gg/codedevils',
-    sundevilsync: 'https://asu.campuslabs.com/engage/organization/codedevils/',
-    linkedin: 'https://www.linkedin.com/company/codedevils-official/',
-    instagram: 'https://www.instagram.com/codedevils.asu/',
-    github: 'https://github.com/ASU-CodeDevils/',
-  };
-  const { discord, sundevilsync, linkedin, instagram, github } = socialLinks;
   return (
     <footer className='w-full bg-gray mt-auto'>
       <div className='mx-auto max-w-screen-2xl py-2'>
