@@ -77,7 +77,7 @@ const Navbar = () => {
           <ul
             className={`${
               showMenu ? 'flex' : 'hidden'
-            } md:flex md:space-x-6 flex-col md:flex-row w-full justify-start md:justify-start text-md font-medium md:col-span-2 gap-y-4`}
+            } pt-4 md:pt-0 md:flex md:space-x-6 flex-col md:flex-row w-full justify-start md:justify-start text-md font-medium md:col-span-2 gap-y-4`}
           >
             <li className=''>
               <Link href='/onboarding' onClick={() => setShowMenu(!showMenu)}>
