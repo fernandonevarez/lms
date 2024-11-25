@@ -33,13 +33,13 @@ export async function generateMetadata({
     description: `Enroll in the ${formattedTitle} course at Codevera Academy to boost your coding skills. Learn and advance your knowledge in ${formattedTitle} through interactive lessons and projects.`,
     openGraph: {
       ...openGraphDefaults,
-      title: `${formattedTitle} | Codevera Academy`,
+      title: `${formattedTitle}`,
       description: `Learn ${formattedTitle} at Codevera Academy. Access interactive lessons and hands-on projects to master ${formattedTitle} and advance your software development career.`,
       url: `https://academy.codevera.org/learn/${course_title_url}`,
     },
     twitter: {
       ...twitterDefaults,
-      title: `${formattedTitle} | Codevera Academy`,
+      title: `${formattedTitle}`,
       description: `Enroll in the ${formattedTitle} course at Codevera Academy and take your coding skills to the next level. Learn through interactive lessons and community support.`,
     },
   };

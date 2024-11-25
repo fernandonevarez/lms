@@ -17,19 +17,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://academy.codevera.org/learn',
   },
-  title: 'Your Learning Dashboard',
+  title: 'Your Dashboard',
   description:
     'Track your progress on the courses you are enrolled in at Codevera Academy. Get personalized recommendations on what to learn next and insights into your software development journey.',
   openGraph: {
     ...openGraphDefaults,
-    title: 'Your Learning Dashboard',
+    title: 'Your Dashboard',
     description:
       'View your progress on enrolled courses at Codevera Academy. Get personalized course recommendations and insights to advance your software development skills.',
     url: 'https://academy.codevera.org/learn',
   },
   twitter: {
     ...twitterDefaults,
-    title: 'Your Learning Dashboard',
+    title: 'Your Dashboard',
     description:
       'Track your progress, get course recommendations, and stay motivated in your software development journey with Codevera Academy.',
   },
