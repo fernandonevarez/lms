@@ -8,6 +8,10 @@ import Footer from '@/components/ui/footer';
 import Navbar from '@/components/ui/navbar';
 
 export const metadata: Metadata = {
+  title: {
+    default: 'Codevera Academy',
+    template: '%s | Codevera Academy',
+  },
   description:
     'Explore coding courses, interactive workshops, and community resources at Codevera Academy to elevate your software development skills.',
   openGraph: {
