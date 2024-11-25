@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     'Explore coding courses, interactive workshops, and community resources at Codevera Academy to elevate your software development skills.',
   openGraph: {
     ...openGraphDefaults,
+    title: {
+      default: 'Codevera Academy',
+      template: '%s | Codevera Academy',
+    },
     description:
       'Join Codevera Academy to explore a variety of coding courses, interactive workshops, and community resources to elevate your software development skills.',
   },
