@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import {
   openGraphDefaults,
   twitterDefaults,
-} from '@/utils/metadata/shared-metedata';
+} from '@/utils/metadata/shared-metadata';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://academy.codevera.org/sign-in'),

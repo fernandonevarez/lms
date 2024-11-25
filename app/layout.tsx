@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import {
   openGraphDefaults,
   twitterDefaults,
-} from '@/utils/metadata/shared-metedata';
+} from '@/utils/metadata/shared-metadata';
 import './globals.css';
 
 import { ClerkProvider } from '@clerk/nextjs';
