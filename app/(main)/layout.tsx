@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import {
   openGraphDefaults,
   twitterDefaults,
-} from '@/utils/metedata/shared-metedata';
+} from '@/utils/metadata/shared-metedata';
 
 import Footer from '@/components/ui/footer';
 import Navbar from '@/components/ui/navbar';

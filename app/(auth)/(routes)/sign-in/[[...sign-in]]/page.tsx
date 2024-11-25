@@ -4,7 +4,7 @@ import { SignIn } from '@clerk/nextjs';
 import {
   openGraphDefaults,
   twitterDefaults,
-} from '@/utils/metedata/shared-metedata';
+} from '@/utils/metadata/shared-metedata';
 
 export const metadata: Metadata = {
   alternates: {

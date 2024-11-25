@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import {
   openGraphDefaults,
   twitterDefaults,
-} from '@/utils/metedata/shared-metedata';
+} from '@/utils/metadata/shared-metedata';
 import { SignUp } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
