@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 
@@ -9,12 +10,14 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          'bg-maroon hover:bg-maroon/90 text-white shadow-xs shadow transition-colors',
+        default: 'shadow-xs text-white',
+        action: 'bg-primary text-white shadow-xs shadow transition-colors',
         secondary:
-          'bg-white text-black-foreground shadow-sm md:hover:text-black/95 md:hover:bg-white/95 transition-colors',
+          'bg-muted text-black-foreground shadow-sm md:hover:bg-white md:hover:border-muted transition-colors',
+        outline:
+          'border border-input bg-white shadow-sm hover:bg-primary hover:text-white',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'relative bg-transparent border-0 min-w-0 min-h-0 outline-offset-[6px] font-semibold tracking-tight text-maroon hover:text-[#8c1d40] hover:no-underline before:block before:absolute before:bg-current before:w-[calc(100%-4px)] before:h-0.5 before:opacity-0 before:right-[3px] before:-bottom-0.5 before:pointer-events-none hover:before:opacity-80',
+        link: 'relative bg-transparent border-0 min-w-0 min-h-0 outline-offset-[6px] font-semibold tracking-tight text-primary hover:text-primary hover:no-underline before:block before:absolute before:bg-current before:w-[calc(100%-4px)] before:h-0.5 before:opacity-0 before:right-[3px] before:-bottom-0.5 before:pointer-events-none hover:before:opacity-80',
       },
       size: {
         default: 'h-9 px-4 py-2',
