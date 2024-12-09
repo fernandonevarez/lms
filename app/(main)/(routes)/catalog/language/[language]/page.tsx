@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {};
 
-export default async function Course({
+export default async function Page({
   params,
 }: {
   params: Promise<{ language: string }>;

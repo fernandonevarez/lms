@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {};
 
-export default async function CareerPath({
+export default async function Page({
   params,
 }: {
   params: Promise<{ path: string }>;

@@ -35,8 +35,6 @@ export const metadata: Metadata = {
   },
 };
 
-const OnboardingPage = () => {
+export default function Page() {
   return <div>This is the user&apos;s learning dashboard.</div>;
-};
-
-export default OnboardingPage;
+}

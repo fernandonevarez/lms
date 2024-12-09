@@ -43,7 +43,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Article({
+export default async function Page({
   params,
 }: {
   params: Promise<{ article_title: string }>;

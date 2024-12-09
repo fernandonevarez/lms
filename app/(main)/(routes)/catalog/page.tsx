@@ -35,8 +35,6 @@ export const metadata: Metadata = {
   },
 };
 
-const CoursesPage = () => {
+export default function Page() {
   return <div>Catalog Page</div>;
-};
-
-export default CoursesPage;
+}
