@@ -44,18 +44,17 @@ NavigationMenuList.displayName = NavigationMenuPrimitive.List.displayName;
 const NavigationMenuItem = NavigationMenuPrimitive.Item;
 
 const NavigationMenuLogo = React.forwardRef<
-  React.ElementRef<typeof NavigationMenuPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Item>
+  React.ElementRef<'div'>,
+  React.ComponentPropsWithoutRef<'div'>
 >(({ className, ...props }, ref) => {
-  const { ...rest } = props;
   return (
-    <NavigationMenuPrimitive.Item
+    <div
       ref={ref}
       className={cn(
         'flex flex-row items-center justify-start flex-none',
         className
       )}
-      {...rest}
+      {...props}
     >
       <Logo.Icon href='https://www.codevera.org/' externalLink />
       <svg height='32' viewBox='0 0 32 32' width='32'>
@@ -67,7 +66,7 @@ const NavigationMenuLogo = React.forwardRef<
         ></path>
       </svg>
       <Logo href='/' />
-    </NavigationMenuPrimitive.Item>
+    </div>
   );
 });
 NavigationMenuLogo.displayName = NavigationMenuPrimitive.Item.displayName;
