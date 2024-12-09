@@ -132,7 +132,7 @@ const NavigationMenuBannerTitle = React.forwardRef<
 >(({ children, className, ...props }, ref) => (
   <h2
     ref={ref}
-    className={cn('text-lg font-semibold text-primary', className)}
+    className={cn('text-lg font-medium text-primary', className)}
     {...props}
   >
     {children}
