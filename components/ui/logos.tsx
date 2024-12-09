@@ -28,11 +28,13 @@ export interface LogoProps
 
 const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
   ({ className, href, externalLink, ...props }, ref) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const Comp: any = href ? Link : 'div';
     return (
       <Comp
         {...(href ? { href } : {})}
         className={cn(logoVariants({ className }), className)}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ref={ref as React.Ref<any>}
         {...props}
         target={externalLink ? '_blank' : undefined}
@@ -54,13 +56,17 @@ const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
   >;
 };
 
+Logo.displayName = 'Logo';
+
 Logo.Icon = React.forwardRef<HTMLAnchorElement, LogoProps>(
   ({ className, href, externalLink, ...props }, ref) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const Comp: any = href ? Link : 'div';
     return (
       <Comp
         {...(href ? { href } : {})}
         className={cn(logoVariants({ className }), className)}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ref={ref as React.Ref<any>}
         {...props}
         target={externalLink ? '_blank' : undefined}
@@ -78,5 +84,7 @@ Logo.Icon = React.forwardRef<HTMLAnchorElement, LogoProps>(
     );
   }
 );
+
+Logo.Icon.displayName = 'Logo.Icon';
 
 export { Logo };
