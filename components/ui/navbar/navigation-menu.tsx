@@ -62,8 +62,8 @@ const NavigationMenuLogo = React.forwardRef<
         <path
           d='M22 5L9 28'
           stroke='hsl(208, 77%, 14%)'
-          stroke-linecap='round'
-          stroke-linejoin='round'
+          strokeLinecap='round'
+          strokeLinejoin='round'
         ></path>
       </svg>
       <Logo href='/' />
