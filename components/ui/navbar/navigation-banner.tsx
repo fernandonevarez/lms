@@ -26,15 +26,15 @@ const Banner = () => {
             <>
               {pathname === '/dashboard/instructor' ? (
                 <li>
-                  <Button variant={'action'} size={'sm'}>
-                    <Link href='/catalog' className='uppercase'>
+                  <Button variant={'action'} size={'sm'} asChild>
+                    <Link href='/' className='uppercase'>
                       Exit Instructor Mode
                     </Link>
                   </Button>
                 </li>
               ) : (
                 <li>
-                  <Button variant={'action'} size={'sm'}>
+                  <Button variant={'action'} size={'sm'} asChild>
                     <Link href='/dashboard/instructor' className='uppercase'>
                       Instructor Mode
                     </Link>
@@ -45,14 +45,21 @@ const Banner = () => {
           ) : (
             <>
               <li>
-                <Link href='/career-center' className='*:p-0'>
-                  <Button variant={'link'}>Career Services</Button>
-                </Link>
+                <Button size={'sm'} asChild>
+                  <Link href='/community/projects'>Community projects</Link>
+                </Button>
               </li>
               <li>
-                <Link href='https://www.codevera.org/support' className='*:p-0'>
-                  <Button variant={'link'}>Get Support </Button>
-                </Link>
+                {' '}
+                <Button size={'sm'} asChild>
+                  <Link
+                    href='https://www.codevera.org/support'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                  >
+                    Get Support
+                  </Link>
+                </Button>
               </li>
             </>
           )}
