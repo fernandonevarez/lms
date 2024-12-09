@@ -188,22 +188,20 @@ const Navbar = () => {
                       <NavigationMenuBannerDescription>
                         Get inspired and explore career resources.
                       </NavigationMenuBannerDescription>
-                      <Link
-                        href='/blog'
-                        className='flex flex-row items-center justify-start hover:text-primary hover:underline gap-1 text-sm'
-                      >
-                        <p> Explore our blog</p>
-                        <ArrowRight height={'12px'} width={'12px'} />
-                      </Link>
                     </NavigationMenuBanner>
                   </div>
 
                   <ul className='grid grid-cols-3 grid-rows-1 row-span-2 col-span-7'>
-                    <ListItem href='/blog/category/career' title='Career'>
+                    <ListItem
+                      href='https://www.codevera.org/blog/category/career'
+                      externalLink
+                      title='Career'
+                    >
                       Find career advice and resources.
                     </ListItem>
                     <ListItem
-                      href='/blog/category/inspiration'
+                      href='https://www.codevera.org/blog/category/inspiration'
+                      externalLink
                       title='Inspiration'
                     >
                       Find inspiration for your coding journey.
@@ -244,7 +242,11 @@ const Navbar = () => {
                     <ListItem href='/community/projects' title='Projects'>
                       Get industry-like experience through community projects.
                     </ListItem>
-                    <ListItem href='/blog' title='Blog'>
+                    <ListItem
+                      href='https://www.codevera.org/blog'
+                      externalLink
+                      title='Blog'
+                    >
                       Stay up-to-date with our blog.
                     </ListItem>
                     <ListItem href='/community/leaderboard' title='Leaderboard'>
@@ -252,7 +254,8 @@ const Navbar = () => {
                     </ListItem>
                     <ListItem
                       title="Learner's Stories"
-                      href='/blog/category/learner-stories'
+                      href='https://www.codevera.org/blog/category/learner-stories'
+                      externalLink
                     >
                       Read about other learners&apos; experiences.
                     </ListItem>
@@ -404,19 +407,17 @@ const Navbar = () => {
                         <NavigationMenuBannerDescription>
                           Get inspired and explore career resources.
                         </NavigationMenuBannerDescription>
-                        <Link
-                          href='/blog'
-                          className='flex flex-row items-center justify-start hover:text-primary underline gap-1 text-sm'
-                        >
-                          <p> Explore our blog</p>
-                          <ArrowRight height={'12px'} width={'12px'} />
-                        </Link>
                       </NavigationMenuBanner>
-                      <ListItem href='/blog/category/career' title='Career'>
+                      <ListItem
+                        href='https://www.codevera.org/blog/category/career'
+                        externalLink
+                        title='Career'
+                      >
                         Find career advice and resources.
                       </ListItem>
                       <ListItem
-                        href='/blog/category/inspiration'
+                        href='https://www.codevera.org/blog/category/inspiration'
+                        externalLink
                         title='Inspiration'
                       >
                         Find inspiration for your coding journey.
@@ -456,7 +457,11 @@ const Navbar = () => {
                       <ListItem href='/community/projects' title='Projects'>
                         Get industry-like experience through community projects.
                       </ListItem>
-                      <ListItem href='/blog' title='Blog'>
+                      <ListItem
+                        href='https://www.codevera.org/blog'
+                        externalLink
+                        title='Blog'
+                      >
                         Stay up-to-date with our blog.
                       </ListItem>
                       <ListItem
@@ -467,7 +472,8 @@ const Navbar = () => {
                       </ListItem>
                       <ListItem
                         title="Learner's Stories"
-                        href='/blog/category/learner-stories'
+                        href='https://www.codevera.org/blog/category/learner-stories'
+                        externalLink
                       >
                         Read about other learners&apos; experiences.
                       </ListItem>
