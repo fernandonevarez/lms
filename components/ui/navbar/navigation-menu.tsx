@@ -158,8 +158,10 @@ const NavigationMenuLink = NavigationMenuPrimitive.Link;
 
 const ListItem = React.forwardRef<
   React.ElementRef<'a'>,
-  React.ComponentPropsWithoutRef<'a'>
->(({ className, title, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<'a'> & {
+    externalLink?: boolean;
+  }
+>(({ className, title, children, externalLink, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
@@ -169,6 +171,8 @@ const ListItem = React.forwardRef<
             'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground h-full group',
             className
           )}
+          target={externalLink ? '_blank' : undefined}
+          rel={externalLink ? 'noopener noreferrer' : undefined}
           {...props}
         >
           <h2 className='text-sm font-medium leading-none group-hover:text-primary'>
