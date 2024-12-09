@@ -13,7 +13,7 @@ const buttonVariants = cva(
         default: 'shadow-xs bg-white text-black',
         action: 'bg-primary text-white transition-colors',
         secondary:
-          'bg-muted text-white shadow-sm md:hover:bg-white md:hover:border-muted transition-colors',
+          'bg-muted text-white shadow-sm md:hover:bg-muted/70 md:hover:border-muted transition-colors',
         outline:
           'border border-input bg-white shadow-sm hover:bg-primary hover:text-white',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
