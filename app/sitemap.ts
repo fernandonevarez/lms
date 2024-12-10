@@ -1,3 +1,11 @@
+/*
+
+  This file as of right now sucks and the reason for that is because i still need to finish the backend and actually content creation aspsect of the project. Once that is done, i will be able to actually create a sitemap for the website the way it is supposed to be.
+
+  In the meantime, i won't work much more on this file.
+
+*/
+
 import type { MetadataRoute } from 'next';
 
 // Example function to dynamically get courses from an API or database
@@ -6,7 +14,7 @@ async function getCoursesURL() {
     // Use environment variable for the API endpoint
     const apiUrl =
       process.env.COURSES_API_URL ||
-      'https://academy.codedevils.io/api/courses';
+      'https://apis.codevera.org/.../.../.../courses';
     const response = await fetch(apiUrl);
     if (!response.ok) throw new Error('Failed to fetch courses');
     const courses = await response.json();
@@ -28,32 +36,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date().toISOString();
 
   const courseUrls = courses.map(
-    (course: { courseId: string; title: string; lastModified: string }) => ({
-      url: `https://academy.codedevils.io/courses/${course.courseId}`,
+    (course: { course: string; title: string; lastModified: string }) => ({
+      url: `https://academy.codevera.org/learn/${course.courseId}`,
       lastModified: course.lastModified || currentDate,
       priority: 0.5,
     })
   );
 
+  /*
+    TODO:
+    - get all the articles' URLs from the API
+    - update the path priority to prioritize resources and community pages over other pages
+    - add the career paths' URLs
+    - add the cheatsheets' URLs
+    - add the code challenges' URLs
+    - update the courses' URLs to once the backend is ready
+  */
+
   const staticUrls = [
     {
-      url: 'https://academy.codedevils.io/',
+      url: 'https://academy.codevera.org/',
       lastModified: currentDate,
       changeFrequency: 'daily',
       priority: 1,
     },
     ...[
-      '/onboarding',
-      '/courses',
-      '/career',
-      '/workshops',
+      '/learn',
+      '/catalog',
+      '/articles',
+      '/career-center',
+      '/community/events',
+      '/community/forum',
+      '/community/leaderboard',
+      '/community/projects',
+      '/cheatsheets',
+      '/code-challenges',
       '/projects',
       '/sign-in',
       '/sign-up',
     ].map((path) => ({
-      url: `https://academy.codedevils.io${path}`,
+      url: `https://academy.codevera.org${path}`,
       lastModified: currentDate,
-      priority: path.includes('/courses') ? 0.8 : 0.5,
+      priority: 0.5,
     })),
   ];
 
