@@ -54,7 +54,7 @@ const Navbar = () => {
               <NavigationMenuTrigger>Catalog</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className='grid gap-2 p-4 md:w-[400px] lg:w-[1000px] lg:grid-rows-8 lg:grid-cols-10 lg:h-[500px]'>
-                  <div className='col-span-3 row-span-5'>
+                  <ul className='col-span-3 row-span-5'>
                     <NavigationMenuBanner>
                       <NavigationMenuBannerTitle>
                         Popluar Course Topics
@@ -63,11 +63,17 @@ const Navbar = () => {
                         Explore all of our free courses in topics that intrest
                         you.
                       </NavigationMenuBannerDescription>
-                      <Button variant={'action'} className='mt-auto ' size='lg'>
+
+                      <Button
+                        variant={'action'}
+                        size='lg'
+                        className='mt-auto'
+                        asChild
+                      >
                         <Link href='/catalog'>Explore all courses</Link>
                       </Button>
                     </NavigationMenuBanner>
-                  </div>
+                  </ul>
 
                   <ul className='grid grid-cols-4 grid-flow-col grid-rows-6 col-span-7 row-span-4 '>
                     <ListItem href='/catalog/language/python' title='Python' />
@@ -89,7 +95,7 @@ const Navbar = () => {
                     <ListItem href='/catalog/language/rust' title='Rust' />
                   </ul>
 
-                  <div className='grid row-span-2 col-span-3 '>
+                  <ul className='grid row-span-2 col-span-3 '>
                     <NavigationMenuBanner>
                       <NavigationMenuBannerTitle>
                         Choose your path
@@ -99,7 +105,7 @@ const Navbar = () => {
                         right for you.
                       </NavigationMenuBannerDescription>
                     </NavigationMenuBanner>
-                  </div>
+                  </ul>
 
                   <div className='grid row-start-5 col-start-4 col-span-8 bg-muted justify-items-center items-center rounded-md'>
                     Prepare for your future with newly launched resources.
@@ -155,7 +161,7 @@ const Navbar = () => {
               <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className='grid p-4 gap-2 lg:grid-rows-5 lg:grid-cols-10 md:w-[400px] lg:w-[800px] lg:h-[400px]'>
-                  <div className='row-span-3 col-span-3 '>
+                  <ul className='row-span-3 col-span-3 '>
                     <NavigationMenuBanner>
                       <NavigationMenuBannerTitle>
                         Learning & practice tools
@@ -165,7 +171,7 @@ const Navbar = () => {
                         practice.
                       </NavigationMenuBannerDescription>
                     </NavigationMenuBanner>
-                  </div>
+                  </ul>
                   <ul className='grid grid-cols-3 grid-rows-2 row-span-3 col-span-7'>
                     <ListItem href='/articles' title='Articles'>
                       Learn more about in-depth technical topics.
@@ -180,7 +186,7 @@ const Navbar = () => {
                       Follow along with our guided projects.
                     </ListItem>
                   </ul>
-                  <div className='row-span-2 col-span-3'>
+                  <ul className='row-span-2 col-span-3'>
                     <NavigationMenuBanner>
                       <NavigationMenuBannerTitle>
                         Inspiration & career
@@ -189,7 +195,7 @@ const Navbar = () => {
                         Get inspired and explore career resources.
                       </NavigationMenuBannerDescription>
                     </NavigationMenuBanner>
-                  </div>
+                  </ul>
 
                   <ul className='grid grid-cols-3 grid-rows-1 row-span-2 col-span-7'>
                     <ListItem
@@ -221,7 +227,7 @@ const Navbar = () => {
               <NavigationMenuTrigger>Community</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className='grid p-4 gap-2 lg:grid-rows-3 lg:grid-cols-10 md:w-[400px] lg:w-[800px] lg:h-[300px]'>
-                  <div className='row-span-3 col-span-3 '>
+                  <ul className='row-span-3 col-span-3 '>
                     <NavigationMenuBanner>
                       <NavigationMenuBannerTitle>
                         Explore our community
@@ -231,7 +237,7 @@ const Navbar = () => {
                         through our community projects.
                       </NavigationMenuBannerDescription>
                     </NavigationMenuBanner>
-                  </div>
+                  </ul>
                   <ul className='grid grid-cols-3 grid-rows-2 row-span-3 col-span-7'>
                     <ListItem href='/community/forum' title='Forum'>
                       Join discussions and ask questions.
