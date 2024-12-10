@@ -1,36 +1,90 @@
+import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { cva, type VariantProps } from 'class-variance-authority';
 
-const IconLogo = () => {
-  return (
-    <Link href='https://www.codevera.org/'>
-      <Image
-        src='/logos/logo-small.svg'
-        alt='logo'
-        width={16}
-        height={16}
-        className='w-8 md:w-8'
-        aria-label="Go to Codevera's home page"
-      />
-      <span className='sr-only'>Go to Codevera&apos;s home page</span>
-    </Link>
-  );
+import { cn } from '@/lib/utils';
+
+const logoVariants = cva('', {
+  variants: {
+    size: {
+      default: 100,
+      sm: 50,
+      md: 100,
+      lg: 150,
+    },
+  },
+  defaultVariants: {
+    size: 'default',
+  },
+});
+
+export interface LogoProps
+  extends React.HTMLAttributes<HTMLAnchorElement>,
+    VariantProps<typeof logoVariants> {
+  href?: string;
+  externalLink?: boolean;
+}
+
+const Logo = React.forwardRef<HTMLAnchorElement, LogoProps>(
+  ({ className, href, externalLink, ...props }, ref) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const Comp: any = href ? Link : 'div';
+    return (
+      <Comp
+        {...(href ? { href } : {})}
+        className={cn(logoVariants({ className }), className)}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ref={ref as React.Ref<any>}
+        {...props}
+        target={externalLink ? '_blank' : undefined}
+        rel={externalLink ? 'noopener noreferrer' : undefined}
+      >
+        <Image
+          src='/logos/logo.svg'
+          alt='logo'
+          width={128}
+          height={128}
+          aria-label="Go to Codevera academy's home page"
+        />
+      </Comp>
+    );
+  }
+) as React.ForwardRefExoticComponent<LogoProps> & {
+  Icon: React.ForwardRefExoticComponent<
+    LogoProps & React.RefAttributes<HTMLAnchorElement>
+  >;
 };
 
-const ProjectLogo = () => {
-  return (
-    <Link href='/'>
-      <Image
-        src='/logos/logo-large.svg'
-        alt='logo'
-        width={64}
-        height={32}
-        className='w-36 md:w-32 items-center flex'
-        aria-label='Go to Home Page'
-      />
-      <span className='sr-only'>Go to Home Page</span>
-    </Link>
-  );
-};
+Logo.displayName = 'Logo';
 
-export { IconLogo, ProjectLogo };
+Logo.Icon = React.forwardRef<HTMLAnchorElement, LogoProps>(
+  ({ className, href, externalLink, ...props }, ref) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const Comp: any = href ? Link : 'div';
+    return (
+      <Comp
+        {...(href ? { href } : {})}
+        className={cn(logoVariants({ className }), className)}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ref={ref as React.Ref<any>}
+        {...props}
+        target={externalLink ? '_blank' : undefined}
+        rel={externalLink ? 'noopener noreferrer' : undefined}
+      >
+        <Image
+          src='/logos/icon.webp'
+          alt='logo'
+          width={32}
+          height={32}
+          className='w-8'
+          aria-label="Go to Codevera's home page"
+        />
+      </Comp>
+    );
+  }
+);
+
+Logo.Icon.displayName = 'Logo.Icon';
+
+export { Logo };

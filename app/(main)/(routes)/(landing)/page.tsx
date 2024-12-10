@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <div className='flex flex-col gap-y-2'>
       <p className='text-center md:text-start'>landing page</p>

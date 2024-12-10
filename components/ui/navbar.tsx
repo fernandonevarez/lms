@@ -1,196 +1,498 @@
 'use client';
 
-// external imports
-import { useState } from 'react';
-import { UserButton } from '@clerk/nextjs';
+import * as React from 'react';
 import Link from 'next/link';
+import { UserButton } from '@clerk/nextjs';
 
-// local imports
-import Banner from './banner';
-import { IconLogo, ProjectLogo } from './logos';
-
-// icons
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Banner } from '@/components/ui/navbar/navigation-banner';
 import {
-  IconMenu2,
-  IconX,
-  IconSearch,
-  IconFileDescription,
-} from '@tabler/icons-react';
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/components/ui/collapsible';
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuBanner,
+  NavigationMenuBannerTitle,
+  NavigationMenuBannerDescription,
+  NavigationMenuLink,
+  NavigationMenuList,
+  ListItem,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+  NavigationMenuLogo,
+} from '@/components/ui/navbar/navigation-menu';
+import { Searchbar } from '@/components/ui/navbar/navigation-search';
+import { ScrollArea } from '@/components/ui/scroll-area';
+
+import {
+  Menu,
+  SquareLibrary,
+  ArrowRight,
+  Layers3,
+  Library,
+  Handshake,
+} from 'lucide-react';
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <>
-      <header className='flex flex-col shadow-md w-full'>
-        <Banner />
-        <nav className='flex md:grid md:grid-cols-4 px-6 items-center py-4 w-full h-full max-w-screen-2xl mx-auto bg-white flex-col md:flex-row'>
-          <section className='flex w-full flex-row items-center justify-between'>
-            <div className='flex flex-row items-center justify-start gap-0 md:gap-1'>
-              <IconLogo />
-              <div>
-                <svg height='32' viewBox='0 0 32 32' width='32'>
-                  <path
-                    d='M22 5L9 28'
-                    stroke='#8c1d40'
-                    stroke-linecap='round'
-                    stroke-linejoin='round'
-                  ></path>
-                </svg>
-              </div>
-              <ProjectLogo />
+    <header className='bg-white shadow-md'>
+      <Banner />
+      <NavigationMenu className='lg:gap-2'>
+        <NavigationMenuLogo />
+
+        {/* Desktop Navigation */}
+        <div className='hidden lg:flex md:items-center grow justify-between'>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Catalog</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className='grid gap-2 p-4 md:w-[400px] lg:w-[1000px] lg:grid-rows-8 lg:grid-cols-10 lg:h-[500px]'>
+                  <ul className='col-span-3 row-span-5'>
+                    <NavigationMenuBanner>
+                      <NavigationMenuBannerTitle>
+                        Popluar Course Topics
+                      </NavigationMenuBannerTitle>
+                      <NavigationMenuBannerDescription>
+                        Explore all of our free courses in topics that intrest
+                        you.
+                      </NavigationMenuBannerDescription>
+
+                      <Button
+                        variant={'action'}
+                        size='lg'
+                        className='mt-auto'
+                        asChild
+                      >
+                        <Link href='/catalog'>Explore all courses</Link>
+                      </Button>
+                    </NavigationMenuBanner>
+                  </ul>
+
+                  <ul className='grid grid-cols-4 grid-flow-col grid-rows-6 col-span-7 row-span-4 '>
+                    <ListItem href='/catalog/language/python' title='Python' />
+                    <ListItem
+                      href='/catalog/language/javascript'
+                      title='JavaScript'
+                    />
+                    <ListItem
+                      href='/catalog/language/html-css'
+                      title='HTML & CSS'
+                    />
+                    <ListItem href='/catalog/language/sql' title='SQL' />
+                    <ListItem href='/catalog/language/java' title='Java' />
+                    <ListItem href='/catalog/language/cpp' title='C++' />
+                    <ListItem href='/catalog/language/csharp' title='C#' />
+                    <ListItem href='/catalog/language/c' title='C' />
+                    <ListItem href='/catalog/language/php' title='PHP' />
+                    <ListItem href='/catalog/language/r' title='R' />
+                    <ListItem href='/catalog/language/rust' title='Rust' />
+                  </ul>
+
+                  <ul className='grid row-span-2 col-span-3 '>
+                    <NavigationMenuBanner>
+                      <NavigationMenuBannerTitle>
+                        Choose your path
+                      </NavigationMenuBannerTitle>
+                      <NavigationMenuBannerDescription>
+                        Explore all of our career paths and find the one that is
+                        right for you.
+                      </NavigationMenuBannerDescription>
+                    </NavigationMenuBanner>
+                  </ul>
+
+                  <div className='grid row-start-5 col-start-4 col-span-8 bg-muted justify-items-center items-center rounded-md'>
+                    Prepare for your future with newly launched resources.
+                  </div>
+
+                  <ul className='grid grid-flow-row-dense	grid-rows-3 grid-cols-3 row-span-2 col-span-7'>
+                    <ListItem
+                      href='/career-path/full-stack-engineer'
+                      title='Full-Stack Engineer'
+                    />
+                    <ListItem
+                      href='/career-path/front-end-engineer'
+                      title='Front End Engineer'
+                    />
+                    <ListItem
+                      href='/career-path/back-end-engineer'
+                      title='Back End Engineer'
+                    />
+                    <ListItem
+                      href='/career-path/computer-science'
+                      title='Computer Science'
+                    />
+                    <ListItem
+                      href='/career-path/data-scientist'
+                      title='Data Scientist'
+                    />
+                    <ListItem
+                      href='/career-path/cybersecurity'
+                      title='Cybersecurity'
+                    />
+                  </ul>
+
+                  <div className='grid col-span-12 row-span-2 bg-muted justify-items-start items-center px-6'>
+                    <div className='flex flex-row gap-x-2 items-center'>
+                      <Layers3 className='text-primary' />
+                      <p className='flex flex-row'>
+                        Don&apos;t know where to start?
+                      </p>
+                      <Link
+                        href='/career-paths'
+                        className='text-primary text-sm font-bold gap-1 flex items-center hover:underline'
+                      >
+                        Take our quiz
+                        <ArrowRight height={'12px'} width={'12px'} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className='grid p-4 gap-2 lg:grid-rows-5 lg:grid-cols-10 md:w-[400px] lg:w-[800px] lg:h-[400px]'>
+                  <ul className='row-span-3 col-span-3 '>
+                    <NavigationMenuBanner>
+                      <NavigationMenuBannerTitle>
+                        Learning & practice tools
+                      </NavigationMenuBannerTitle>
+                      <NavigationMenuBannerDescription>
+                        Explore al of our free tools to help you learn and
+                        practice.
+                      </NavigationMenuBannerDescription>
+                    </NavigationMenuBanner>
+                  </ul>
+                  <ul className='grid grid-cols-3 grid-rows-2 row-span-3 col-span-7'>
+                    <ListItem href='/articles' title='Articles'>
+                      Learn more about in-depth technical topics.
+                    </ListItem>
+                    <ListItem href='/cheatsheets' title='Cheatsheets'>
+                      Quick reference guides for our courses.
+                    </ListItem>
+                    <ListItem href='/code-challenges' title='Code Challenges'>
+                      Practice your skills with code challenges.
+                    </ListItem>
+                    <ListItem href='/projects' title='Projects'>
+                      Follow along with our guided projects.
+                    </ListItem>
+                  </ul>
+                  <ul className='row-span-2 col-span-3'>
+                    <NavigationMenuBanner>
+                      <NavigationMenuBannerTitle>
+                        Inspiration & career
+                      </NavigationMenuBannerTitle>
+                      <NavigationMenuBannerDescription>
+                        Get inspired and explore career resources.
+                      </NavigationMenuBannerDescription>
+                    </NavigationMenuBanner>
+                  </ul>
+
+                  <ul className='grid grid-cols-3 grid-rows-1 row-span-2 col-span-7'>
+                    <ListItem
+                      href='https://www.codevera.org/blog/category/career'
+                      externalLink
+                      title='Career'
+                    >
+                      Find career advice and resources.
+                    </ListItem>
+                    <ListItem
+                      href='https://www.codevera.org/blog/category/inspiration'
+                      externalLink
+                      title='Inspiration'
+                    >
+                      Find inspiration for your coding journey.
+                    </ListItem>
+                    <ListItem
+                      href='/career-center/job-readiness'
+                      title='Job-readiness checker'
+                    >
+                      Assess your job readiness with AI.
+                    </ListItem>
+                  </ul>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Community</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className='grid p-4 gap-2 lg:grid-rows-3 lg:grid-cols-10 md:w-[400px] lg:w-[800px] lg:h-[300px]'>
+                  <ul className='row-span-3 col-span-3 '>
+                    <NavigationMenuBanner>
+                      <NavigationMenuBannerTitle>
+                        Explore our community
+                      </NavigationMenuBannerTitle>
+                      <NavigationMenuBannerDescription>
+                        Join events, ask questions, and meet other learners
+                        through our community projects.
+                      </NavigationMenuBannerDescription>
+                    </NavigationMenuBanner>
+                  </ul>
+                  <ul className='grid grid-cols-3 grid-rows-2 row-span-3 col-span-7'>
+                    <ListItem href='/community/forum' title='Forum'>
+                      Join discussions and ask questions.
+                    </ListItem>
+                    <ListItem href='/community/events' title='Events'>
+                      Join community events and meetups.
+                    </ListItem>
+                    <ListItem href='/community/projects' title='Projects'>
+                      Get industry-like experience through community projects.
+                    </ListItem>
+                    <ListItem
+                      href='https://www.codevera.org/blog'
+                      externalLink
+                      title='Blog'
+                    >
+                      Stay up-to-date with our blog.
+                    </ListItem>
+                    <ListItem href='/community/leaderboard' title='Leaderboard'>
+                      See how you stack up against others.
+                    </ListItem>
+                    <ListItem
+                      title="Learner's Stories"
+                      href='https://www.codevera.org/blog/category/learner-stories'
+                      externalLink
+                    >
+                      Read about other learners&apos; experiences.
+                    </ListItem>
+                  </ul>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link href='/career-center' legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Career Center
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+
+          <section className='flex gap-2 grow-0 items-center'>
+            <div className='relative'>
+              <Searchbar />
             </div>
-
-            <section className='flex items-center space-x-2'>
-              <IconSearch
-                stroke={2}
-                className='md:hidden'
-                onClick={() => setShowSearch(!showSearch)}
-              />
-
-              <button
-                className='inline-block md:hidden text-2xl text-black focus:outline-none'
-                onClick={() => setShowMenu(!showMenu)}
-              >
-                <IconMenu2
-                  className={`${showMenu ? 'hidden' : 'inline-block'}`}
-                  size={32}
-                  stroke={1}
-                />
-
-                <IconX
-                  width={32}
-                  height={32}
-                  stroke={1}
-                  className={`${showMenu ? 'inline-block' : 'hidden'}`}
-                />
-                <span className='sr-only'>
-                  {showMenu
-                    ? 'Open Mobile Navigation'
-                    : 'Close Mobile Navigation'}
-                </span>
-              </button>
-            </section>
+            <UserButton />
           </section>
+        </div>
 
-          <ul
-            className={`${
-              showMenu ? 'flex' : 'hidden'
-            } pt-4 md:pt-0 md:flex md:space-x-6 flex-col md:flex-row w-full justify-start md:justify-start text-md font-medium md:col-span-2 gap-y-4`}
-          >
-            <li className=''>
-              <Link href='/onboarding' onClick={() => setShowMenu(!showMenu)}>
-                OnBoarding
-              </Link>
-            </li>
-            <li className=''>
-              <Link href='/courses' onClick={() => setShowMenu(!showMenu)}>
-                Courses
-              </Link>
-            </li>
-          </ul>
+        {/* Mobile Navigation */}
+        <div className='flex lg:hidden items-center space-x-2'>
+          <Searchbar />
 
-          <ul
-            className={`${
-              showMenu ? '' : ''
-            } hidden md:flex md:justify-end md:gap-x-2 md:items-center`}
-          >
-            <li>
-              {/* Search */}
-              <button
-                type='button'
-                className='w-[237px] cursor-pointer flex items-center justify-between h-8 whitespace-nowrap bg-[hsla(0,0%,95%,1)] rounded-md px-[6px] pl-2 text-sm font-sans text-[hsla(0,0%,56%,1)] transition-all duration-150 ease-linear hover:bg-[hsla(0,0%,92%,1)] hover:text-[hsla(0,0%,49%,1)]'
-                onClick={() => setShowSearch(!showSearch)}
-              >
-                Search Resources...
-                <kbd className='h-5 leading-5 rounded-md px-[6px] text-xs text-[hsla(0,0%,9%,1)] bg-white font-medium shadow-[0_0_0_1px_rgba(0,0,0,0.08)] border-none ml-4'>
-                  ⌘K
-                </kbd>
-                <span className='sr-only'>Open Search Dialog</span>
-              </button>
-            </li>
-            <li className='flex items-center'>
-              <UserButton />
-            </li>
-          </ul>
-        </nav>
-      </header>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button size='icon'>
+                <span className='sr-only'>Open menu</span>
+                <Menu className='h-6 w-6 text-black' aria-hidden='true' />
+              </Button>
+            </SheetTrigger>
 
-      {/* Search Dialog */}
-      {/* center it */}
-      <div
-        className={`fixed bottom-0 w-full h-full bg-[rgba(0,0,0,.4)]  transition-all  duration-[400ms]  ${
-          showSearch ? 'flex' : 'hidden'
-        }
-        
-        `}
-        onClick={() => setShowSearch(false)}
-      ></div>
+            <SheetContent side='left' className='w-full lg:hidden'>
+              <ScrollArea className='h-full odd:bg-muted'>
+                <Collapsible>
+                  <CollapsibleTrigger>
+                    <SquareLibrary />
+                    Catalog
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <ul className='space-y-2'>
+                      <NavigationMenuBanner>
+                        <NavigationMenuBannerTitle>
+                          Popluar Course Topics
+                        </NavigationMenuBannerTitle>
+                        <NavigationMenuBannerDescription>
+                          Explore all of our free courses in topics that intrest
+                          you.
+                        </NavigationMenuBannerDescription>
+                      </NavigationMenuBanner>
 
-      <div
-        className={`bg-white fixed bottom-0 rounded-t-lg md:rounded-[12px] w-full h-[80vh] md:h-fit md:top z-50 duration-400 md:flex-col
-            ${
-              showSearch
-                ? 'translate-y-0 md:flex'
-                : 'translate-y-[80vh] md:hidden'
-            } 
-            md:top-[30%] md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2
-            md:gap-[12px] md:items-center md:justify-between transition-transform md:duration-1000
-            md:w-[640px]
-            `}
-      >
-        <section className='flex justify-between px-2 items-center gap-3 w-full'>
-          <input
-            type='text'
-            placeholder='What are you looking for?'
-            className='w-full border-b border-gray-300 h-[50px] md:h-[28px] px-2 py-4 rounded mt-2 outline-none'
-          />
-          <button
-            type='button'
-            className='h-5 shadow-[0 0 0 1px rgba(0,0,0,.08)] rounded bg-[#fff] text-xs border-none px-1 ml-auto md:flex items-center transition-colors duration-200 cursor-pointer outline-none hidden'
-          >
-            Esc
-          </button>
-        </section>
-        <section
-          aria-label='Suggestions'
-          className='p-2 w-full max-h-[436px] overflow-y-auto'
-        >
-          <ul className='flex flex-col text-sm'>
-            <li className='suggestion_item'>
-              <IconFileDescription stroke={2} />{' '}
-              <Link href='/search?q=nextjs'>Introduction</Link>
-            </li>
-            <li className='suggestion_item'>
-              <IconFileDescription stroke={2} />
-              <Link href='/search?q=tailwindcss'>Resume Parser</Link>
-            </li>
-            <li className='suggestion_item'>
-              <IconFileDescription stroke={2} />
-              <Link href='/search?q=react'>Career Page</Link>
-            </li>
-            <li className='suggestion_item'>
-              <IconFileDescription stroke={2} />
-              <Link href='/search?q=typescript'>Web Development Course</Link>
-            </li>
-            <li className='suggestion_item'>
-              <IconFileDescription stroke={2} />
-              <Link href='/search?q=javascript'>Workshops</Link>
-            </li>{' '}
-            <li className='suggestion_item'>
-              <IconFileDescription stroke={2} />
-              <Link href='/search?q=javascript'>Code-Along Projects</Link>
-            </li>{' '}
-            <li className='suggestion_item'>
-              <IconFileDescription stroke={2} />
-              <Link href='/search?q=javascript'>Suggestion Placeholder</Link>
-            </li>
-          </ul>
-        </section>
-      </div>
-    </>
+                      <ListItem
+                        href='/catalog/language/python'
+                        title='Python'
+                      />
+                      <ListItem
+                        href='/catalog/language/javascript'
+                        title='JavaScript'
+                      />
+                      <ListItem
+                        href='/catalog/language/html-css'
+                        title='HTML & CSS'
+                      />
+                      <ListItem href='/catalog/language/sql' title='SQL' />
+                      <ListItem href='/catalog/language/java' title='Java' />
+                      <ListItem href='/catalog/language/cpp' title='C++' />
+                      <ListItem href='/catalog/language/csharp' title='C#' />
+                      <ListItem href='/catalog/language/c' title='C' />
+                      <ListItem href='/catalog/language/php' title='PHP' />
+                      <ListItem href='/catalog/language/r' title='R' />
+                      <ListItem href='/catalog/language/rust' title='Rust' />
+
+                      <NavigationMenuBanner>
+                        <NavigationMenuBannerTitle>
+                          Choose your path
+                        </NavigationMenuBannerTitle>
+                        <NavigationMenuBannerDescription>
+                          Explore all of our career paths and find the one that
+                          is right for you.
+                        </NavigationMenuBannerDescription>
+                      </NavigationMenuBanner>
+                      <ListItem
+                        href='/career-path/full-stack-engineer'
+                        title='Full-Stack Engineer'
+                      />
+                      <ListItem
+                        href='/career-path/front-end-engineer'
+                        title='Front End Engineer'
+                      />
+                      <ListItem
+                        href='/career-path/back-end-engineer'
+                        title='Back End Engineer'
+                      />
+                      <ListItem
+                        href='/career-path/computer-science'
+                        title='Computer Science'
+                      />
+                      <ListItem
+                        href='/career-path/data-scientist'
+                        title='Data Scientist'
+                      />
+                      <ListItem
+                        href='/career-path/cybersecurity'
+                        title='Cybersecurity'
+                      />
+                    </ul>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                <Collapsible>
+                  <CollapsibleTrigger>
+                    <Library />
+                    Resources
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <ul className='space-y-2'>
+                      <NavigationMenuBanner>
+                        <NavigationMenuBannerTitle>
+                          Learning & practice tools
+                        </NavigationMenuBannerTitle>
+                        <NavigationMenuBannerDescription>
+                          Explore all of our free tools to help you learn and
+                          practice.
+                        </NavigationMenuBannerDescription>
+                      </NavigationMenuBanner>
+                      <ListItem href='/articles' title='Articles'>
+                        Learn more about in-depth technical topics.
+                      </ListItem>
+                      <ListItem href='/cheatsheets' title='Cheatsheets'>
+                        Quick reference guides for our courses.
+                      </ListItem>
+                      <ListItem href='/code-challenges' title='Code Challenges'>
+                        Practice your skills with code challenges.
+                      </ListItem>
+
+                      <ListItem href='/projects' title='Projects'>
+                        Follow along with our guided projects.
+                      </ListItem>
+
+                      <NavigationMenuBanner>
+                        <NavigationMenuBannerTitle>
+                          Inspiration & career
+                        </NavigationMenuBannerTitle>
+                        <NavigationMenuBannerDescription>
+                          Get inspired and explore career resources.
+                        </NavigationMenuBannerDescription>
+                      </NavigationMenuBanner>
+                      <ListItem
+                        href='https://www.codevera.org/blog/category/career'
+                        externalLink
+                        title='Career'
+                      >
+                        Find career advice and resources.
+                      </ListItem>
+                      <ListItem
+                        href='https://www.codevera.org/blog/category/inspiration'
+                        externalLink
+                        title='Inspiration'
+                      >
+                        Find inspiration for your coding journey.
+                      </ListItem>
+                      <ListItem
+                        href='/career-center/job-readiness'
+                        title='Job-readiness checker'
+                      >
+                        Assess your job readiness with AI.
+                      </ListItem>
+                    </ul>
+                  </CollapsibleContent>
+                </Collapsible>
+
+                <Collapsible>
+                  <CollapsibleTrigger>
+                    <Handshake />
+                    Community
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <ul className='space-y-2'>
+                      <NavigationMenuBanner>
+                        <NavigationMenuBannerTitle>
+                          Explore our community
+                        </NavigationMenuBannerTitle>
+                        <NavigationMenuBannerDescription>
+                          Join events, ask questions, and meet other learners
+                          through our community projects.
+                        </NavigationMenuBannerDescription>
+                      </NavigationMenuBanner>
+                      <ListItem href='/forum' title='Forum'>
+                        Join discussions and ask questions.
+                      </ListItem>
+                      <ListItem href='/events' title='Events'>
+                        Join community events and meetups.
+                      </ListItem>
+                      <ListItem href='/community/projects' title='Projects'>
+                        Get industry-like experience through community projects.
+                      </ListItem>
+                      <ListItem
+                        href='https://www.codevera.org/blog'
+                        externalLink
+                        title='Blog'
+                      >
+                        Stay up-to-date with our blog.
+                      </ListItem>
+                      <ListItem
+                        href='/community/leaderboard'
+                        title='Leaderboard'
+                      >
+                        See how you stack up against others.
+                      </ListItem>
+                      <ListItem
+                        title="Learner's Stories"
+                        href='https://www.codevera.org/blog/category/learner-stories'
+                        externalLink
+                      >
+                        Read about other learners&apos; experiences.
+                      </ListItem>
+                    </ul>
+                  </CollapsibleContent>
+                </Collapsible>
+              </ScrollArea>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </NavigationMenu>
+    </header>
   );
 };
 
-export default Navbar;
+export { Navbar };

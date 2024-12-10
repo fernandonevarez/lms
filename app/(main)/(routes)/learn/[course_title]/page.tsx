@@ -45,7 +45,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function Course({
+export default async function Page({
   params,
 }: {
   params: Promise<{ course_title: string }>;

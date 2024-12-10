@@ -35,8 +35,6 @@ export const metadata: Metadata = {
   },
 };
 
-const Articles = () => {
+export default function Page() {
   return <div>Articles Page</div>;
-};
-
-export default Articles;
+}

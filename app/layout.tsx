@@ -29,7 +29,6 @@ export const metadata: Metadata = {
     { name: 'Codevera Team', url: 'https://academy.codevera.org/about' },
   ],
   applicationName: 'Codevera Academy',
-  viewport: 'width=device-width, initial-scale=1.0',
   creator: 'Codevera Academy Team',
   manifest: '/manifest.webmanifest',
   keywords: [
