@@ -19,10 +19,14 @@ async function getCoursesURL() {
     if (!response.ok) throw new Error('Failed to fetch courses');
     const courses = await response.json();
     return courses.map(
-      (course: { courseId: string; title: string; lastModified: string }) => ({
-        courseId: course.courseId,
+      (course: {
+        course_id: string;
+        title: string;
+        last_modified: string;
+      }) => ({
+        courseId: course.course_id,
         title: course.title,
-        lastModified: course.lastModified,
+        lastModified: course.last_modified,
       })
     );
   } catch (error) {
@@ -36,8 +40,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date().toISOString();
 
   const courseUrls = courses.map(
-    (course: { course: string; title: string; lastModified: string }) => ({
-      url: `https://academy.codevera.org/learn/${course.courseId}`,
+    (course: { course_id: string; title: string; lastModified: string }) => ({
+      url: `https://academy.codevera.org/learn/${course.course_id}`,
       lastModified: course.lastModified || currentDate,
       priority: 0.5,
     })
