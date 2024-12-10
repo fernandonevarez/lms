@@ -1,39 +1,36 @@
+import type { Metadata } from 'next';
+import {
+  openGraphDefaults,
+  twitterDefaults,
+} from '@/utils/metadata/shared-metadata';
+
 import Footer from '@/components/ui/footer';
 import Navbar from '@/components/ui/navbar';
-import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://academy.codedevils.org'),
   title: {
-    template:
-      "%s | CodeDevils' Academy | CodeDevils @ Arizona State University",
-    default: "CodeDevils' Academy | CodeDevils @ Arizona State University",
+    default: 'Codevera Academy',
+    template: '%s | Codevera Academy',
   },
   description:
-    "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
-
+    'Explore coding courses, interactive workshops, and community resources at Codevera Academy to elevate your software development skills.',
   openGraph: {
-    title: "CodeDevils' Academy | CodeDevils @ Arizona State University",
+    ...openGraphDefaults,
+    title: {
+      default: 'Codevera Academy',
+      template: '%s | Codevera Academy',
+    },
     description:
-      "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
-    type: 'website',
-    url: 'https://academy.codedevils.org',
-    locale: 'en_US',
-    siteName: "CodeDevils' Academy",
-    images: [
-      {
-        url: 'https://www.codedevils.org/og.png',
-        width: 1362,
-        height: 482,
-        alt: "CodeDevils' openGraph image",
-      },
-    ],
+      'Join Codevera Academy to explore a variety of coding courses, interactive workshops, and community resources to elevate your software development skills.',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: "CodeDevils' Academy | CodeDevils @ Arizona State University",
+    ...twitterDefaults,
+    title: {
+      default: 'Codevera Academy',
+      template: '%s | Codevera Academy',
+    },
     description:
-      "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
+      'Discover courses, workshops, and community resources at Codevera Academy to elevate your software development career.',
   },
 };
 

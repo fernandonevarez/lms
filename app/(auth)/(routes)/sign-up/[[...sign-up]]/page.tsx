@@ -1,25 +1,31 @@
 import type { Metadata } from 'next';
+import {
+  openGraphDefaults,
+  twitterDefaults,
+} from '@/utils/metadata/shared-metadata';
 import { SignUp } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
-  title:
-    "Sign Up | CodeDevils' Academy | CodeDevils @ Arizona State University",
+  alternates: {
+    canonical: 'https://academy.codevera.org/sign-up',
+  },
+  title: 'Sign Up',
   description:
-    "Create your CodeDevils' Academy account and begin your coding journey with Arizona State University.",
-  robots: 'noindex, nofollow',
+    'Sign up for Codevera Academy to begin your journey in software development. Access coding courses, workshops, and a supportive community to boost your skills.',
   openGraph: {
-    title: "Sign Up | CodeDevils' Academy",
+    ...openGraphDefaults,
+    title: 'Sign Up',
     description:
-      "Join CodeDevils' Academy to learn coding, participate in workshops, and enhance your development skills.",
-    url: 'https://academy.codedevils.io/sign-up',
+      'Create an account at Codevera Academy to start learning coding today. Unlock courses, workshops, and community support to advance your software development skills.',
+    url: 'https://academy.codevera.org/sign-up',
   },
   twitter: {
-    card: 'summary',
-    title:
-      "Sign Up | CodeDevils' Academy | CodeDevils @ Arizona State University",
+    ...twitterDefaults,
+    title: 'Sign Up',
     description:
-      "Sign up to start learning with CodeDevils' Academy, Arizona State University.",
+      'Sign up at Codevera Academy to start your journey in software development. Access a variety of courses, workshops, and supportive resources.',
   },
+  robots: 'noindex, nofollow',
 };
 
 const RegisterPage = () => {

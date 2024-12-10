@@ -1,19 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
-import {
-  IconBrandInstagram,
-  IconBrandGithub,
-  IconBrandLinkedin,
-  IconPaperclip,
-} from '@tabler/icons-react';
-
-const socialLinks = {
-  linkedin: '',
-  instagram: '',
-  github: '',
-};
-
 const Footer = () => {
   return (
     <footer className='w-full bg-gray mt-auto'>
