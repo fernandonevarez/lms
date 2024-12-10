@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '',
     },
-    sitemap: 'https://academy.codedevils.io/sitemap.xml',
+    sitemap: 'https://academy.codevera.org/sitemap.xml',
   };
 }
