@@ -1,10 +1,37 @@
-import Footer from '@/components/ui/footer';
-import Navbar from '@/components/ui/navbar';
 import type { Metadata } from 'next';
+import {
+  openGraphDefaults,
+  twitterDefaults,
+} from '@/utils/metadata/shared-metadata';
+
+import { Footer } from '@/components/ui/footer';
+import { Navbar } from '@/components/ui/navbar';
 
 export const metadata: Metadata = {
-  title: 'Btye size Academy',
-  description: 'Learn to code with Byte Size Academy',
+  title: {
+    default: 'Codevera Academy',
+    template: '%s | Codevera Academy',
+  },
+  description:
+    'Explore coding courses, interactive workshops, and community resources at Codevera Academy to elevate your software development skills.',
+  openGraph: {
+    ...openGraphDefaults,
+    title: {
+      default: 'Codevera Academy',
+      template: '%s | Codevera Academy',
+    },
+    description:
+      'Join Codevera Academy to explore a variety of coding courses, interactive workshops, and community resources to elevate your software development skills.',
+  },
+  twitter: {
+    ...twitterDefaults,
+    title: {
+      default: 'Codevera Academy',
+      template: '%s | Codevera Academy',
+    },
+    description:
+      'Discover courses, workshops, and community resources at Codevera Academy to elevate your software development career.',
+  },
 };
 
 export default function MainLayout({
@@ -15,7 +42,7 @@ export default function MainLayout({
   return (
     <>
       <Navbar />
-      <main className='mx-auto w-full max-w-screen-2xl'>{children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );

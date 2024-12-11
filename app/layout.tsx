@@ -1,8 +1,13 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import {
+  openGraphDefaults,
+  twitterDefaults,
+} from '@/utils/metadata/shared-metadata';
 import './globals.css';
 
 import { ClerkProvider } from '@clerk/nextjs';
+import { Inter } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -10,52 +15,63 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://academy.codedevils.io'),
-  title: "CodeDevils' Academy | CodeDevils @ Arizona State University",
+  metadataBase: new URL('https://academy.codevera.org'),
+  title: {
+    default: 'Codevera Academy',
+    template: '%s | Codevera Academy',
+  },
   description:
-    "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
-  robots: 'index, follow',
+    'Codevera Academy offers a wide range of coding courses, workshops, and articles to help software enthusiasts improve their skills and advance their careers.',
+  robots:
+    process.env.DEPLOYMENT_ENV === 'production'
+      ? 'index, follow'
+      : 'noindex, nofollow',
   authors: [
-    { name: 'Fernando David Nevarez', url: 'https://www.davidnevarez.info' },
+    { name: 'Codevera Team', url: 'https://academy.codevera.org/about' },
   ],
-  applicationName: "CodeDevils' Academy",
-  viewport: 'width=device-width, initial-scale=1.0',
-  creator: 'Fernando David Nevarez',
+  applicationName: 'Codevera Academy',
+  creator: 'Codevera Academy Team',
   manifest: '/manifest.webmanifest',
   keywords: [
-    'CodeDevils Arizona State University',
-    'Arizona State University coding courses',
-    'Coding Courses for Beginners to Advanced',
-    'learn to coding for beginners',
-    'Programming Workshops at ASU',
-    'career readiness for software developers',
+    'Codevera Academy',
+    'Learn to Code',
+    'Online Coding Courses',
+    'Software Development Learning',
+    'Career Readiness for Developers',
+    'Programming Workshops',
+    'Coding Skills Improvement',
     'Software Development',
     'Web Development',
-    'Programming Skills',
     'Code-Along Projects',
   ],
   openGraph: {
-    title: "CodeDevils' Academy | CodeDevils @ Arizona State University",
+    ...openGraphDefaults,
+    title: 'Codevera Academy',
     description:
-      "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
+      'Explore a wide range of coding courses, workshops, and resources at Codevera Academy to enhance your coding skills and advance your software development career.',
+    url: 'https://academy.codevera.org',
     type: 'website',
-    url: 'https://academy.codedevils.io',
-    locale: 'en_US',
-    siteName: "CodeDevils' Academy",
+    locale: openGraphDefaults.locale,
+    siteName: openGraphDefaults.siteName,
     images: [
       {
-        url: 'https://www.codedevils.io/og.png',
-        width: 1362,
-        height: 482,
-        alt: "CodeDevils' openGraph image",
+        url: 'https://academy.codevera.org/images/opengraph/default.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Codevera Academy - Coding Courses and Career Growth',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: "CodeDevils' Academy | CodeDevils @ Arizona State University",
+    ...twitterDefaults,
+    title: 'Codevera Academy',
     description:
-      "Explore a wide range of coding courses designed for beginners to advanced learners at CodeDevils' Academy, part of Arizona State University.",
+      'Join Codevera Academy to learn coding skills through online courses, workshops, and community support. Advance your career in software development today.',
+  },
+  appleWebApp: {
+    title: 'Codevera Academy',
+    startupImage: 'https://academy.codevera.org/icons/apple-touch-icon.png',
+    statusBarStyle: 'black-translucent',
   },
 };
 
@@ -67,8 +83,11 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <body className={`antialiased flex h-screen flex-col `}>
+        <body
+          className={`antialiased flex h-screen flex-col ${inter.className}`}
+        >
           {children}
+          <GoogleAnalytics gaId={`${process.env.GA_MEASUREMENT_ID}`} />
         </body>
       </html>
     </ClerkProvider>

@@ -5,72 +5,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --shadow: 0, 0%, 0%, 0.4;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-}
-
-html {
-  font-family: var(
-      'geistSansFont',
-      Apple Color Emoji,
-      Segoe UI Emoji,
-      Segoe UI Symbol,
-      arials,
-      var(--font-sans-fallback)
-    ),
-    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-body {
-  min-height: 100vh;
-}
-
-img,
-picture,
-svg,
-video {
-  display: block;
-  max-width: 100%;
-}
-
-input,
-textarea,
-select,
-button {
-  font: inherit;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
+/* Colors */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -79,7 +17,7 @@ body {
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --primary: 208, 77%, 14%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -98,6 +36,14 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -124,95 +70,74 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
 @layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
   * {
-    @apply border-border;
+    margin: 0;
+    padding: 0;
+    font: inherit;
   }
+
+  html {
+    color: black;
+    background: white;
+    font-family: var(
+        'geistSansFont',
+        Apple Color Emoji,
+        Segoe UI Emoji,
+        Segoe UI Symbol,
+        arials,
+        var(--font-sans-fallback)
+      ),
+      ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+      'Noto Color Emoji';
+  }
+
+
   body {
-    @apply bg-background text-foreground;
+    min-height: 100vh;
+  }
+
+  img,
+  picture,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+
+  main {
+    @apply mx-auto w-full max-w-screen-2xl *:px-6 md:*:px-14 my-8 md:my-24;
   }
 }
 
-/* CUSTOM CSS */
-
-.underHoverEffect {
-  background-color: unset;
-  border: 0;
-  min-width: unset;
-  min-height: unset;
-  position: relative;
-  outline-offset: 6px;
-
-  font-weight: 600;
-  letter-spacing: -0.225px;
-  @apply text-maroon;
-}
-
-.underHoverEffect:before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: currentColor;
-  width: calc(100% - 4px);
-  height: 2px;
-  opacity: 0;
-  right: 3px;
-  bottom: -2px;
-  top: unset;
-  pointer-events: none;
-}
-
-.underHoverEffect:hover {
-  color: #8c1d40;
-  text-decoration: unset;
-}
-
-.underHoverEffect:hover:before {
-  opacity: 0.8;
-}
-
-.navbar_search {
-  width: 237px;
-
-  --search-size: 32px;
-  all: unset;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 32px;
-  white-space: nowrap;
-  background: hsla(0, 0%, 95%, 1);
-  border-radius: 6px;
-  padding: 0 6px 0 8px;
-  font-size: 14px;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
-    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  color: hsla(0, 0%, 56%, 1);
-  transition-property: background, color;
-  transition-duration: 0.15s;
-  transition-timing-function: ease;
-}
-
-.search_kbd {
-  height: 20px;
-  line-height: 20px;
-  border-radius: 6px;
-  padding: 0 6px;
-  font-size: 12px;
-  color: hsla(0, 0%, 9%, 1);
-  background: #fff;
-  font-weight: 500;
-  font-family: inherit;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
-  border: none;
-  margin-left: 16px;
-}
-
-.suggestion_item {
-  @apply flex items-center gap-2 px-2 py-4 md:p-2 md:hover:bg-[rgba(0,0,0,.05)];
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }

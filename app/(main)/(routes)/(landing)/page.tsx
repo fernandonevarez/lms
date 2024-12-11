@@ -1,42 +1,44 @@
+import type { Metadata } from 'next';
+import {
+  openGraphDefaults,
+  twitterDefaults,
+} from '@/utils/metadata/shared-metadata';
+
 import { SignOutButton } from '@clerk/nextjs';
 
-import type { Metadata } from 'next';
-
 export const metadata: Metadata = {
-  title: "Home | CodeDevils' Academy | CodeDevils @ Arizona State University",
-  description:
-    "Join CodeDevils' Academy, the largest software development student community at Arizona State University, to learn coding through courses, workshops, and projects.",
+  alternates: {
+    canonical: 'https://academy.codevera.org/',
+  },
   keywords: [
-    'CodeDevils Academy',
-    'Learn coding Arizona State University',
-    'ASU coding courses',
-    'CodeDevils',
-    'coding workshops',
-    'software development ASU',
+    'Codevera Academy',
+    'learn to code',
+    'coding courses for beginners',
+    'free online coding education',
+    'software development training',
+    'start coding journey',
+    'career in software development',
+    'learn programming basics',
   ],
+  title: 'Learn to Code - For Free',
+  description:
+    'Learn more about Codevera Academy, where aspiring developers can start their journey in software development. Access free coding courses, workshops, and community resources to kickstart your career in tech.',
   openGraph: {
-    title: "Home | CodeDevils' Academy | CodeDevils @ Arizona State University",
+    ...openGraphDefaults,
+    title: 'Learn to Code - For Free',
     description:
-      "Explore a wide range of coding courses and workshops at CodeDevils' Academy, the leading software development community at Arizona State University.",
-    url: 'https://academy.codedevils.io',
-    images: [
-      {
-        url: 'https://academy.codedevils.io/og.png',
-        width: 1200,
-        height: 630,
-        alt: 'CodeDevils Academy OpenGraph Image',
-      },
-    ],
+      'Discover Codevera Academy - the perfect place for aspiring developers to start learning coding for free. Explore engaging courses, hands-on workshops, and supportive community resources to advance your software development skills.',
+    url: 'https://academy.codevera.org/',
   },
   twitter: {
-    card: 'summary_large_image',
-    title: "Home | CodeDevils' Academy | CodeDevils @ Arizona State University",
+    ...twitterDefaults,
+    title: 'Learn to Code - For Free',
     description:
-      'Join the leading software development student community at Arizona State University and start your coding journey today.',
+      'Learn more about Codevera Academy, offering free coding courses and workshops. Start your journey in software development and advance your career with our community support.',
   },
 };
 
-export default function Home() {
+export default function Page() {
   return (
     <div className='flex flex-col gap-y-2'>
       <p className='text-center md:text-start'>landing page</p>
