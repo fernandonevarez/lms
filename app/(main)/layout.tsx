@@ -4,7 +4,7 @@ import {
   twitterDefaults,
 } from '@/utils/metadata/shared-metadata';
 
-import Footer from '@/components/ui/footer';
+import { Footer } from '@/components/ui/footer';
 import { Navbar } from '@/components/ui/navbar';
 
 export const metadata: Metadata = {
