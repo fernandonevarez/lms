@@ -454,10 +454,10 @@ const Navbar = () => {
                           through our community projects.
                         </NavigationMenuBannerDescription>
                       </NavigationMenuBanner>
-                      <ListItem href='/forum' title='Forum'>
+                      <ListItem href='/community/forum' title='Forum'>
                         Join discussions and ask questions.
                       </ListItem>
-                      <ListItem href='/events' title='Events'>
+                      <ListItem href='/community/events' title='Events'>
                         Join community events and meetups.
                       </ListItem>
                       <ListItem href='/community/projects' title='Projects'>
