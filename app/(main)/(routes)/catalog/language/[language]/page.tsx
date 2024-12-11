@@ -14,8 +14,8 @@ export default async function Page({
 
   return (
     <div>
-      A single course page
-      <div>Course title: {formattedTitle}</div>
+      A catalog page filtered to only show courses about a certain language
+      <div>Language: {formattedTitle}</div>
     </div>
   );
 }
