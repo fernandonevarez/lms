@@ -5,17 +5,17 @@ export const metadata: Metadata = {};
 export default async function Page({
   params,
 }: {
-  params: Promise<{ language: string }>;
+  params: Promise<{ subject: string }>;
 }) {
-  const language = (await params).language;
-  const formattedTitle = language
+  const subject = (await params).subject;
+  const formattedTitle = subject
     .replace(/-/g, ' ')
     .replace(/\b\w/g, (char: string) => char.toUpperCase());
 
   return (
     <div>
-      A catalog page filtered to only show courses about a certain language
-      <div>Language: {formattedTitle}</div>
+      A catalog page filtered to only show courses about a certain subject
+      <div>Subject: {formattedTitle}</div>
     </div>
   );
 }

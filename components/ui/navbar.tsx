@@ -93,6 +93,36 @@ const Navbar = () => {
                     <ListItem href='/catalog/language/php' title='PHP' />
                     <ListItem href='/catalog/language/r' title='R' />
                     <ListItem href='/catalog/language/rust' title='Rust' />
+                    <ListItem
+                      href='/catalog/subject/computer-science'
+                      title='Computer Science'
+                    />
+                    <ListItem
+                      href='/catalog/subject/cybersecurity'
+                      title='Cybersecurity'
+                    />
+                    <ListItem
+                      href='/catalog/subject/data-analysis'
+                      title='Data Analysis'
+                    />
+                    <ListItem
+                      href='/catalog/subject/data-science'
+                      title='Data Science'
+                    />
+                    <ListItem
+                      href='/catalog/subject/developer-tools'
+                      title='Developer Tools'
+                    />
+                    <ListItem href='/catalog/subject/devops' title='DevOps' />
+                    <ListItem href='/catalog/subject/it' title='IT' />
+                    <ListItem
+                      href='/catalog/subject/web-design'
+                      title='Web Design'
+                    />
+                    <ListItem
+                      href='/catalog/subject/web-development'
+                      title='Web Development'
+                    />
                   </ul>
 
                   <ul className='grid row-span-2 col-span-3 '>
@@ -454,10 +484,10 @@ const Navbar = () => {
                           through our community projects.
                         </NavigationMenuBannerDescription>
                       </NavigationMenuBanner>
-                      <ListItem href='/forum' title='Forum'>
+                      <ListItem href='/community/forum' title='Forum'>
                         Join discussions and ask questions.
                       </ListItem>
-                      <ListItem href='/events' title='Events'>
+                      <ListItem href='/community/events' title='Events'>
                         Join community events and meetups.
                       </ListItem>
                       <ListItem href='/community/projects' title='Projects'>
