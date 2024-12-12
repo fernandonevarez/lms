@@ -7,7 +7,7 @@ import './globals.css';
 
 import { ClerkProvider } from '@clerk/nextjs';
 import { Inter } from 'next/font/google';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@/components/ui/google-analytics';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -87,7 +87,9 @@ export default function RootLayout({
           className={`antialiased flex h-screen flex-col ${inter.className}`}
         >
           {children}
-          <GoogleAnalytics gaId={`${process.env.GA_MEASUREMENT_ID}`} />
+          <GoogleAnalytics
+            GA_MEASUREMENT_ID={`${process.env.GA_MEASUREMENT_ID}`}
+          />
         </body>
       </html>
     </ClerkProvider>
