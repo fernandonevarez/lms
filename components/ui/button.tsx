@@ -15,7 +15,7 @@ const buttonVariants = cva(
         secondary:
           'bg-muted text-white shadow-sm md:hover:bg-muted/70 md:hover:border-muted transition-colors',
         outline:
-          'border border-input bg-white shadow-sm hover:bg-primary hover:text-white',
+          'border border-input bg-white shadow-sm hover:bg-muted/60 text-black transition-colors',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'relative bg-transparent border-0 min-w-0 min-h-0 outline-offset-[6px] font-semibold tracking-tight text-primary hover:text-primary hover:no-underline before:block before:absolute before:bg-current before:w-[calc(100%-4px)] before:h-0.5 before:opacity-0 before:right-[3px] before:-bottom-0.5 before:pointer-events-none hover:before:opacity-80',
       },
