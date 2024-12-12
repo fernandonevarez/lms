@@ -6,6 +6,7 @@ import {
 
 import { Footer } from '@/components/ui/footer';
 import { Navbar } from '@/components/ui/navbar';
+import { ConsentBanner } from '@/components/ui/consent-banner';
 
 export const metadata: Metadata = {
   title: {
@@ -42,7 +43,10 @@ export default function MainLayout({
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main>
+        {children}
+        <ConsentBanner />
+      </main>
       <Footer />
     </>
   );
